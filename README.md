@@ -4,7 +4,7 @@ Bambazon is an application that models how an online store might work.  There ar
 
 Customer View: The user is able to scroll through a list of items for sale, select one, and enter the quantity desired. A list of the items, their prices, the amount in stock, and depatrment category, are all saved in a mySQL database.  When the user chooses to buy a set of items, the program calculates and displays the total cost and updates the stock in the database.  If there is not enough of that item in stock to fill the order, the customer is presented with the choice of buying the rest of the stock or canceling.  After each transaction, the customer is asked if they would like to make another and brought back into the buy menu if they do.
 
-customer_demo.mp4
+[Demo of Customer View](customer_demo.mp4)
 
 
 Manager View: In manager view, the user may perform any of four actions: view items for sale, view items low in stock, restock items, or add new item. The program opens to a scrolling menu which displays each of these options.  
@@ -14,4 +14,4 @@ Manager View: In manager view, the user may perform any of four actions: view it
   -The 'add new item' action allows the user to create a new item by inputting into each of the four data fields - item name, department, price, and number in stock.
 After any of these actions, the user is asked if they would like to perform any more actions. If they select yes they are returned to the beginning menu.
 
-manager_demo.mp4
+[Demo of Manager View](manager_demo.mp4)
