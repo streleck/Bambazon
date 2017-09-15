@@ -47,7 +47,7 @@ function buy() {
 	  	var itemId = itemList.indexOf(inqRes.selection);
 	  	var stock = res[itemId].stock_quantity;
 	  	var newStock = stock - inqRes.quantity;
-	  	var cost = res[itemId].price * inqRes.quantity;
+	  	var cost = (res[itemId].price * inqRes.quantity).toFixed(2);
 
 	  	if(stock < inqRes.quantity){
 	  		console.log("Sorry, we only have " + stock + " of those in stock.")
@@ -64,7 +64,7 @@ function buy() {
 
 	    		if (confirmation.buyStock){
 	    			console.log("Here ya go! " + stock + " units of " + inqRes.selection + ".");
-	    			console.log("That'll be $" + cost + ", please."); 
+	    			console.log("That'll be $" + (res[itemId].price * stock).toFixed(2) + ", please."); 
 	    			updateStock((itemId + 1), 0);
 
 	    		}
@@ -75,7 +75,7 @@ function buy() {
 	    	});
 	    }
 	    else{
-	    	console.log("Here ya go! " + stock + " units of " + inqRes.selection + ".");
+	    	console.log("Here ya go! " + inqRes.quantity + " units of " + inqRes.selection + ".");
 	    	console.log("That'll be $" + cost + ", please."); 
 	    	updateStock((itemId + 1), newStock); 
 	    }

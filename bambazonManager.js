@@ -114,10 +114,11 @@ function addInventory(){
 	  .then(function(inquiryRes, err){
 	  	if (err) throw err;
 	  	var itemIndex = itemList.indexOf(inquiryRes.restock);
+	  	var newStock = parseInt(inquiryRes.quantity) + parseInt(res[itemIndex].stock_quantity)
 	  	var query = connection.query(
-				"UPDATE products SET stock_quantity = ? WHERE item_id = ?", [(inquiryRes.quantity + res[itemIndex].stock_quantity), (itemIndex + 1)], function(err, response){
+				"UPDATE products SET stock_quantity = ? WHERE item_id = ?", [newStock, (itemIndex + 1)], function(err, response){
 						if (err) throw err;
-				console.log("Stock Updated. " + res[itemIndex].product_name + " now has " + (inquiryRes.quantity + res[itemIndex].stock_quantity) + " units in stock.");
+				console.log("Stock Updated. " + res[itemIndex].product_name + " now has " + newStock + " units in stock.");
 				newAction();
 			})
 		});
